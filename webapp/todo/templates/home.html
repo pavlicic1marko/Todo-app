@@ -5,5 +5,12 @@
 
 
 {% block content %}
-<h1>Hello World</h1>
+
+    {%if all_items %}
+        <ul>
+        {% for object in all_items %}
+            <li>{{object.item}} || {{object.completed}}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
 {% endblock %}
