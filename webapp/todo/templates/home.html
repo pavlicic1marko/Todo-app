@@ -23,13 +23,13 @@
         {% for object in all_items %}
             {% if object.completed %}
                 <tr class="table-secondary striker">
-                    <td>{{object.item}}</td>
+                    <td><a href="{% url 'edit_todo' object.id %}">{{object.item}}</a></td>
                     <td><a href="{% url 'cross_on' object.id %}">Activate</a></td>
                     <td><a href="{% url 'delete' object.id %}">Delete</a></td>
                 </tr>
             {% else %}
                 <tr>
-                    <td>{{object.item}}</td>
+                    <td><a href="{% url 'edit_todo' object.id %}">{{object.item}}</a></td>
                     <td><a href="{% url 'cross_off' object.id %}">Cross off</a></td>
                     <td><a href="{% url 'delete' object.id %}">Delete</a></td>
                 </tr>

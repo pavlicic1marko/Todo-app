@@ -8,5 +8,6 @@ urlpatterns = [
     path('delete/<list_id>', views.delete, name='delete'),
     path('cross_off/<list_id>', views.cross_off, name='cross_off'),
     path('cross_on/<list_id>', views.cross_on, name='cross_on'),
+    path('todo/<list_id>', views.edit_todo, name='edit_todo'),
 
 ]

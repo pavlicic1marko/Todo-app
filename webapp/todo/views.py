@@ -45,5 +45,19 @@ def cross_on(request, list_id):
     messages.success(request, ('Item status changed'))
     return redirect('home')
 
+def edit_todo(request, list_id):
+    if request.method == 'POST':
+        item = List.objects.get(pk=list_id)
 
+        form = ListForm(request.POST or None, instance=item)
 
+        if form.is_valid():
+            form.save()
+
+            all_items = List.objects.all
+            messages.success(request, ('Item has been edited'))
+            return render(request, 'home.html', {'all_items': all_items})
+
+    else:
+        all_items = List.objects.get(pk=list_id)
+        return render(request, 'todo.html', {'all_items': all_items})
