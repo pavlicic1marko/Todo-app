@@ -24,14 +24,14 @@
             {% if object.completed %}
                 <tr class="table-secondary striker">
                     <td>{{object.item}}</td>
-                    <td>{{object.completed}}</td>
-                    <td>Delete</td>
+                    <td><a href="{% url 'cross_on' object.id %}">Activate</a></td>
+                    <td><a href="{% url 'delete' object.id %}">Delete</a></td>
                 </tr>
             {% else %}
                 <tr>
                     <td>{{object.item}}</td>
-                    <td>{{object.completed}}</td>
-                    <td>Delete</td>
+                    <td><a href="{% url 'cross_off' object.id %}">Cross off</a></td>
+                    <td><a href="{% url 'delete' object.id %}">Delete</a></td>
                 </tr>
             {% endif %}
         {% endfor %}

@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import List
 from .forms import ListForm
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 
 
 def home(request):
@@ -23,3 +24,26 @@ def home(request):
 def about(request):
     context = {"fname": "Jhon", "lname": "Jhonson"}
     return render(request, 'about.html', context)
+
+def delete(request, list_id):
+    item = List.objects.get(pk=list_id)
+    item.delete()
+    messages.success(request, ('Item was deleted'))
+    return redirect('home')
+
+def cross_off(request, list_id):
+    item = List.objects.get(pk=list_id)
+    item.completed = True
+    item.save()
+    messages.success(request, ('Item status changed'))
+    return redirect('home')
+
+def cross_on(request, list_id):
+    item = List.objects.get(pk=list_id)
+    item.completed = False
+    item.save()
+    messages.success(request, ('Item status changed'))
+    return redirect('home')
+
+
+
