@@ -1,1 +1,2 @@
 /webapp/todo/migrations/*.py
+/webapp/db.sqlite3

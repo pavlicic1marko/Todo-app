@@ -59,5 +59,5 @@ def edit_todo(request, list_id):
             return render(request, 'home.html', {'all_items': all_items})
 
     else:
-        all_items = List.objects.get(pk=list_id)
-        return render(request, 'todo.html', {'all_items': all_items})
+        todo = List.objects.get(pk=list_id)
+        return render(request, 'todo.html', {'todo': todo})

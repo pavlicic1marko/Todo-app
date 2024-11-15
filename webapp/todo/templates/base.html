@@ -31,7 +31,7 @@
     </ul>
       <form method="POST">
           {% csrf_token %}
-          <input class="form-controler mr-sm-2" type="search" placeholder="To-Do Item" aria-label="Search" name="item">
+          <input class="form-controler mr-sm-2" type="search" placeholder="To-Do Item" aria-label="Search" name="item" required>
           <button class="btn" type="submit">Add to list</button>
           </form>>
   </div>
