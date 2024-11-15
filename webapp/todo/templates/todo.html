@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Edit Item{% endblock %}
+
+
+{% block content %}
+ {% if all_items %}
+
+    <form method="POST">
+          {% csrf_token %}
+          <input class="form-controler mr-sm-2" type="search" placeholder="{{all_items.item}}" aria-label="Search" name="item">
+          <input type="hidden" value="{{ all_items.completed }}" name="completed">
+          <button class="btn" type="submit">edit Todo</button>
+    </form>
+ {% endif %}
+{% endblock %}
