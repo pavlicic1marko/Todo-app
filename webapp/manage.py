@@ -3,6 +3,7 @@
 import os
 import sys
 def feature1():
+    pass
     print("This is feature 1")
 
 def main():
