@@ -2,7 +2,9 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+def feature1():
+    pass
+    print("This is feature 1")
 
 def main():
     """Run administrative tasks."""
@@ -20,3 +22,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+#test test test test test test test
